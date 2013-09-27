@@ -1,0 +1,180 @@
+/*
+ * Author: May Allidem | @mayallidem | v1
+ * Web: www.mayallidem.com
+ */
+
+/* ==========================================================================
+   Mr. Potato
+   ========================================================================== */
+
+*{ margin: 0; padding: 0;}
+
+$wk: -webkit-;
+$mz: -moz-;
+
+@mixin dimentions ($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+body {
+    background-color: rgb(248,238,185);
+    text-align: center;
+    margin-top: 100px;
+}
+
+.landscape {
+    @include dimentions (100%, 100%);
+    position: absolute; z-index: -1;
+    top: 0; right: 0; bottom: 0; left: 0;
+}
+
+.mrpotato { 
+    #{$wk}animation: 1s bounceInDown ease-in;
+    #{$mz}animation: 1s bounceInDown ease-in;
+          animation: 1s bounceInDown ease-in;
+}
+    .potato {
+        @include dimentions (220px, 215px);
+        display:block;
+        background-color: rgb(198, 150, 112);
+        border-radius: 150% 150% 150% 150% / 200% 200% 100% 100%;
+        margin: 70px auto; padding: 80px 20px;
+        position: relative;
+    }
+
+    .hat {
+        @include dimentions (220px, 30px);
+        background: rgb(71,71,71);
+        border-radius: 100px / 50px;
+        position: absolute;
+        top: 30px;
+        
+        &:after {
+            content: "";
+            @include dimentions (167px, 90px);
+            background: rgb(71, 71, 71);
+            border-radius: 100% 100% 5% 5%;
+            position: absolute; z-index: 0;
+            top: -95px; left: 27px;
+            border-bottom: 10px solid;
+        }
+    } // HAT
+
+    .ears {    
+        &:before, &:after {
+            content: "";
+            @include dimentions (120px, 90px);
+            background: rgb(231, 175, 186);
+            border-radius: 100%;
+            position: absolute; z-index: -1;
+            #{$wk}transform: rotate(90deg);
+            #{$mz}transform: rotate(90deg);
+                  transform: rotate(90deg);
+        }
+        &:before { left: -50px; }
+        &:after  { right: -50px; }
+    } // EARS
+
+    .eye {
+        @include dimentions (100px, 100px);
+        background: rgb(255, 255, 255); 
+        border-radius:  50%  50%  50%  50%  / 60%   60%   40%  40%;
+        display: inline-block; 
+        text-align: left; 
+        margin: 0 -5px;
+
+        .pupil {
+            background-color: rgb(0, 0, 0);
+            @include dimentions (30px, 30px);
+            display: block;
+            border-radius: 100%;
+        }
+    }
+
+    .nose {
+        @include dimentions (140px, 80px);
+        border-radius: 100px / 50px;
+        background: rgb(214, 126, 80);
+        margin: 0 auto;
+        position: relative; z-index: 1;
+        #{$wk}transform: rotate(90deg);
+        #{$mz}transform: rotate(90deg);
+              transform: rotate(90deg);
+        &:after {
+            content: "";
+            @include dimentions (60px, 130px);
+            border-radius: 40px/50px;
+            background: rgb(214, 126, 80);
+            margin: auto;
+            position: absolute;
+            right: 10px; bottom: -25px;
+        }
+    } // NOSE
+
+    .moustache {
+        @include dimentions (100%, 40px);
+        background-color: rgb(0, 0, 0);
+        border-radius: 100% 100% 0% 0% / 160% 160% 0% 0%;
+        position: relative;      
+    }
+
+    .shoes {
+        @include dimentions (140px, 60px);
+        border-radius: 100% 20% 0 0 ;
+        background-color: rgb(4, 139, 186);
+        bottom: -30px; left: -10px;
+        position: absolute; z-index: -1;
+        
+        &:after {
+            content: "";
+            @include dimentions (140px, 60px);
+            border-radius: 20% 100% 0 0 ;
+            background-color: rgb(4, 139, 186);
+            position: absolute; z-index: -1;
+            left: 143px;
+        }
+    }
+
+.character > .star-l::before, .character > .star-r::before {
+  content: "★";
+}
+
+.character {
+    position: relative;
+    @include dimentions (340px, 48px);
+    background-color: rgb(217, 97, 81);
+    color: rgb(255, 255, 255);
+    font-size: 24px;
+    line-height: 51px;
+    margin: 20px auto;
+    .star-l, .star-r {
+        position: absolute;
+        top: 0;
+        display: inline-block;
+        font-size: 14px;
+    }  
+    .star-l { left: 5%; }
+    .star-r { right: 5%; }
+}
+
+@-webkit-keyframes bounceInDown {
+    0%   { opacity: 0; -webkit-transform: translateY(-2000px); }
+    60%  { opacity: 1; -webkit-transform: translateY(30px); }
+    80%  { -webkit-transform: translateY(-10px); }
+    100% { -webkit-transform: translateY(0); }
+}
+
+@-moz-keyframes bounceInDown {
+    0%   { opacity: 0; -moz-transform: translateY(-2000px); }
+    60%  { opacity: 1; -moz-transform: translateY(30px); }
+    80%  { -moz-transform: translateY(-10px); }
+    100% { -moz-transform: translateY(0); }
+}
+
+@keyframes bounceInDown {
+    0%   { opacity: 0; transform: translateY(-2000px); }
+    60%  { opacity: 1; transform: translateY(30px); }
+    80%  { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
