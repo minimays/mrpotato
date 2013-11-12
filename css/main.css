@@ -1,0 +1,205 @@
+/*
+ * Author: May Allidem | @mayallidem | v1
+ * Web: www.mayallidem.com
+ */
+/* ==========================================================================
+   Mr. Potato
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  background-color: #f8eeb9;
+  text-align: center;
+  margin-top: 100px; }
+
+.landscape {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0; }
+
+.mrpotato {
+  -webkit-animation: 1s bounceInDown ease-in;
+  -moz-animation: 1s bounceInDown ease-in;
+  animation: 1s bounceInDown ease-in; }
+
+.potato {
+  width: 220px;
+  height: 215px;
+  display: block;
+  background-color: #c69670;
+  border-radius: 150% 150% 150% 150%/200% 200% 100% 100%;
+  margin: 70px auto;
+  padding: 80px 20px;
+  position: relative; }
+
+.hat {
+  width: 220px;
+  height: 30px;
+  background: #474747;
+  border-radius: 100px/50px;
+  position: absolute;
+  top: 30px; }
+  .hat:after {
+    content: "";
+    width: 167px;
+    height: 90px;
+    background: #474747;
+    border-radius: 100% 100% 5% 5%;
+    position: absolute;
+    z-index: 0;
+    top: -95px;
+    left: 27px;
+    border-bottom: 10px solid; }
+
+.ears:before, .ears:after {
+  content: "";
+  width: 120px;
+  height: 90px;
+  background: #e7afba;
+  border-radius: 100%;
+  position: absolute;
+  z-index: -1;
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  transform: rotate(90deg); }
+.ears:before {
+  left: -50px; }
+.ears:after {
+  right: -50px; }
+
+.eye {
+  width: 100px;
+  height: 100px;
+  background: white;
+  border-radius: 50% 50% 50% 50%/60% 60% 40% 40%;
+  display: inline-block;
+  text-align: left;
+  margin: 0 -5px; }
+  .eye .pupil {
+    background-color: black;
+    width: 30px;
+    height: 30px;
+    display: block;
+    border-radius: 100%; }
+
+.nose {
+  width: 140px;
+  height: 80px;
+  border-radius: 100px/50px;
+  background: #d67e50;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  transform: rotate(90deg); }
+  .nose:after {
+    content: "";
+    width: 60px;
+    height: 130px;
+    border-radius: 40px/50px;
+    background: #d67e50;
+    margin: auto;
+    position: absolute;
+    right: 10px;
+    bottom: -25px; }
+
+.moustache {
+  width: 100%;
+  height: 40px;
+  background-color: black;
+  border-radius: 100% 100% 0% 0%/160% 160% 0% 0%;
+  position: relative; }
+
+.shoes {
+  width: 140px;
+  height: 60px;
+  border-radius: 100% 20% 0 0;
+  background-color: #048bba;
+  bottom: -30px;
+  left: -10px;
+  position: absolute;
+  z-index: -1; }
+  .shoes:after {
+    content: "";
+    width: 140px;
+    height: 60px;
+    border-radius: 20% 100% 0 0;
+    background-color: #048bba;
+    position: absolute;
+    z-index: -1;
+    left: 143px; }
+
+.character > .star-l::before, .character > .star-r::before {
+  content: "★"; }
+
+.character {
+  position: relative;
+  width: 340px;
+  height: 48px;
+  background-color: #d96151;
+  color: white;
+  font-size: 24px;
+  line-height: 51px;
+  margin: 20px auto; }
+  .character .star-l, .character .star-r {
+    position: absolute;
+    top: 0;
+    display: inline-block;
+    font-size: 14px; }
+  .character .star-l {
+    left: 5%; }
+  .character .star-r {
+    right: 5%; }
+
+@-webkit-keyframes bounceInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px); }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translateY(30px); }
+
+  80% {
+    -webkit-transform: translateY(-10px); }
+
+  100% {
+    -webkit-transform: translateY(0); } }
+
+@-moz-keyframes bounceInDown {
+  0% {
+    opacity: 0;
+    -moz-transform: translateY(-2000px); }
+
+  60% {
+    opacity: 1;
+    -moz-transform: translateY(30px); }
+
+  80% {
+    -moz-transform: translateY(-10px); }
+
+  100% {
+    -moz-transform: translateY(0); } }
+
+@keyframes bounceInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-2000px); }
+
+  60% {
+    opacity: 1;
+    transform: translateY(30px); }
+
+  80% {
+    transform: translateY(-10px); }
+
+  100% {
+    transform: translateY(0); } }
